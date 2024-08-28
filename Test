@@ -66,7 +66,7 @@ end)
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
-local Window = Library.CreateLib("Kinos GUI - Age Of Heros", "Ocean");
+local Window = Library.CreateLib("Kinos GUI - Age Of Heros", "Synapse");
 
 local farmTab = Window:NewTab("Farm");
 
