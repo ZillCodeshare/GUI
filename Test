@@ -318,7 +318,7 @@ end);
 
 TSection:NewToggle("Teleport Player", "", function(state)
 
-  if state then
+  if (state) then
 
     _G.bring = true;
 
