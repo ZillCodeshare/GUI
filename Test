@@ -1170,29 +1170,6 @@ AHMSection:NewButton("Refresh Dropdown", "", function()
 end);
 
 
-local Mslcplr = MerkSection:NewDropdown("Select Player", "", dropdown, function(currentOption)
-
-	spawn(function()
-
-	  _M.Hoe = currentOption;
-
-	end);
-
-end);
-
-MerkSection:NewButton("Refresh Dropdown", "", function()
-
-  spawn(function()
-
-    GetList();
-
-    Mslcplr:Refresh(dropdown);
-
-  end);
-
-end);
-
-
 AHMSection:NewToggle("Start", "", function(state)
 
   getgenv().startfarm = state
