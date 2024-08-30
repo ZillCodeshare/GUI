@@ -146,7 +146,7 @@ local KCSection = KGTab:NewSection("Server");
 
 local TTab = Window:NewTab("Locations");
 
-local TSection = TTab:NewSection("Locations");p
+local TSection = TTab:NewSection("Locations");
 
 local MerkSection = TTab:NewSection("Spawn Player");
 
