@@ -322,6 +322,28 @@ TSection:NewToggle("Teleport Player", "", function(state)
 
     _G.bring = true;
 
+  TSection:NewDropdown("Select Player")
+  
+  GetList = function()
+
+  x = 1;
+
+  plrlist = game.Players:GetPlayers();
+
+  dropdown = {};
+
+  for value in pairs(Plyr) do
+
+	  PLR = Plyr[x].Name;
+
+    x += 1
+
+    table.insert(dropdown, PLR);
+
+  end
+
+end;
+
   else
 
     _G.bring = false;
