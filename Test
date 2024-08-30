@@ -150,6 +150,8 @@ local TSection = TTab:NewSection("Locations");
 
 local MerkTab = Window:NewTab("Spawn Player");
 
+local MerkSection = MerkTab:NewSection("Spawn Player");
+
 local GTab = Window:NewTab("Settings");
 
 local GSection = GTab:NewSection("Keybinds");
