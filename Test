@@ -1185,7 +1185,7 @@ if (_M.selectedstat == "Bar") then
         game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(Vector3.new(1, 1, 1), false, game.Players[v.Name].Character);
 
       end
-
+end
 
 
 GetList();
