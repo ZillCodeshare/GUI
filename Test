@@ -158,7 +158,7 @@ local HAHNGASection = GTab:NewSection("Buttons");
 
 local GORSection = GTab:NewSection("Scripts");
 
-local DickTab = Window:NewTab("Spawn Player");
+
 
 _G.CToggle = false;
 
