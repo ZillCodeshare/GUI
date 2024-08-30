@@ -1142,7 +1142,29 @@ TSection:NewButton("Teleport", "", function()
 end);
 
 
+GetList();
 
+local mslcplr = MerkSection:NewDropdown("Select Player", "", dropdown, function(currentOption)
+
+	spawn(function()
+
+	  _G.Hoe = currentOption;
+
+	end);
+
+end);
+
+MerkSection:NewButton("Refresh Dropdown", "", function()
+
+  spawn(function()
+
+    GetList();
+
+    mslcplr:Refresh(dropdown);
+
+  end);
+
+end);
 
 
 GetList();
