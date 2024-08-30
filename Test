@@ -146,11 +146,10 @@ local KCSection = KGTab:NewSection("Server");
 
 local TTab = Window:NewTab("Locations");
 
-local TSection = TTab:NewSection("Locations");
+local TSection = TTab:NewSection("Locations");p
 
-local MerkTab = Window:NewTab("Spawn Player");
+local MerkSection = TTab:NewSection("Spawn Player");
 
-local MerkSection = MerkTab:NewSection("Spawn Player");
 
 local GTab = Window:NewTab("Settings");
 
@@ -1170,6 +1169,28 @@ AHMSection:NewButton("Refresh Dropdown", "", function()
 
 end);
 
+
+local Mslcplr = MerkSection:NewDropdown("Select Player", "", dropdown, function(currentOption)
+
+	spawn(function()
+
+	  _M.Hoe = currentOption;
+
+	end);
+
+end);
+
+MerkSection:NewButton("Refresh Dropdown", "", function()
+
+  spawn(function()
+
+    GetList();
+
+    Mslcplr:Refresh(dropdown);
+
+  end);
+
+end);
 
 
 AHMSection:NewToggle("Start", "", function(state)
