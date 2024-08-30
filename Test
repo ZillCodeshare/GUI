@@ -160,31 +160,6 @@ local GORSection = GTab:NewSection("Scripts");
 
 local DickTab = Window:NewTab("Spawn Player");
 
-GetList();
-
-   slcplrD = DickSection:NewDropdown("Select Player", "", dropdown, function(currentOption)
-
-	spawn(function()
-
-	  _D.Hoe = currentOption;
-
-	end);
-
-end);
-
-DickMSection:NewButton("Refresh Dropdown", "", function()
-
-  spawn(function()
-
-    GetList();
-
-    slcplrD:Refresh(dropdown);
-
-  end);
-
-end);
-
-
 _G.CToggle = false;
 
 _G.metalskin = false;
