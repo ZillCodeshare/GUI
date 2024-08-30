@@ -1174,13 +1174,7 @@ end);
 
 if (_M.selectedstat == "Bar") then
 
-        game:GetService("Workspace")[mslcplr].HumanoidRootPart.telekinesisPosition:Destroy();
-
-        game:GetService("Workspace")[mslcplr].HumanoidRootPart.CFrame = CFrame.new(-1313, 197, 149);
-
-        wait(0.2);
-
-        game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(Vector3.new(1, 1, 1), false, game.Players[mslcplr].Character);
+        game:GetService("Workspace")mslcplr.HumanoidRootPart.CFrame = CFrame.new(-1313, 197, 149);
 
       end
 
