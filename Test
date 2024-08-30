@@ -148,7 +148,7 @@ local TTab = Window:NewTab("Locations");
 
 local TSection = TTab:NewSection("Locations");
 
-
+local MerkTab = Window:NewTab("Spawn Player");
 
 local GTab = Window:NewTab("Settings");
 
