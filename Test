@@ -1242,7 +1242,7 @@ end);
 
 MerkSection:NewDropdown("Safezone Locations", "", {"Bar","Building Park","City Square","Evil Lair","Feild","Hero HQ","Hero Lair","Motel","Mountain","Mountain-2","Park","Plains","Prison"}, function(currentOption)
 
-  _M.selectedstat = currentOption;
+  _G.selectedstat = currentOption;
 
 end);
 
