@@ -1144,52 +1144,6 @@ end);
 
 GetList();
 
-local mslcplr = MerkSection:NewDropdown("Select Player", "", dropdown, function(currentOption)
-
-	spawn(function()
-
-	  Hoe = currentOption;
-
-	end);
-
-end);
-
-MerkSection:NewButton("Refresh Dropdown", "", function()
-
-  spawn(function()
-
-    GetList();
-
-    mslcplr:Refresh(dropdown);
-
-  end);
-
-end);
-
-MerkSection:NewDropdown("Safezone Locations", "", {"Bar","Building Park","City Square","Evil Lair","Feild","Hero HQ","Hero Lair","Motel","Mountain","Mountain-2","Park","Plains","Prison"}, function(currentOption)
-
-  _M.selectedstat = currentOption;
-
-end);
-
-if (_M.selectedstat == "Bar") then
-
-        for i, v in pairs(Hoe) do
-
-        game:GetService("Workspace")[v.Name].HumanoidRootPart.telekinesisPosition:Destroy();
-
-        game:GetService("Workspace")[v.Name].HumanoidRootPart.CFrame = CFrame.new(259, 169, 2748);
-
-        wait(0.2);
-
-        game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(Vector3.new(1, 1, 1), false, game.Players[v.Name].Character);
-
-      end
-end
-
-
-GetList();
-
 local slcplr = AHMSection:NewDropdown("Select Player", "", dropdown, function(currentOption)
 
 	spawn(function()
