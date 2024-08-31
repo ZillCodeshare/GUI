@@ -1259,7 +1259,7 @@ MerkSection:NewDropdown("Unfortunate Locations", "", {"Unfortunate Spot (Secret 
 end);
 
 	if (_G.selectedstat == "Bar") then
-		game:GetService("Workspace")[mslcplr].HumanoidRootPart.CFrame = CFrame.new(-1313, 197, 149);
+		game:GetService("Workspace")[MPlr].HumanoidRootPart.CFrame = CFrame.new(-1313, 197, 149);
 	end
 
 QSection:NewToggle("Rapid Punch", "", function(state)
