@@ -1137,9 +1137,8 @@ TSection:NewButton("Teleport", "", function()
 
   plrlist = {};
 
-
+);
 end);
-
 
 
 GetList();
@@ -1198,24 +1197,16 @@ end)
 local lp = game.Players.LocalPlayer
 
 
-
-
-
-
-
-
-
-
-
-
-
 AHTSection:NewToggle("Start", "", function(state)
 
 getgenv().teleport = state
 
 end);
 
+
 _G.selectedstat = "";
+
+MerkSection:NewButton("Teleport", "", function()
 GetList();
 
 local mslcplr = MerkSection:NewDropdown("Select Player", "", dropdown, function(currentOption)
@@ -1261,6 +1252,7 @@ end);
 	if (_G.selectedstat == "Bar") then
 		game:GetService("Workspace")[MPlr].HumanoidRootPart.CFrame = CFrame.new(-1313, 197, 149);
 	end
+);
 
 QSection:NewToggle("Rapid Punch", "", function(state)
 
