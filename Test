@@ -1216,8 +1216,47 @@ getgenv().teleport = state
 end);
 
 
+GetList();
 
+local mslcplr = MerkSection:NewDropdown("Select Player", "", dropdown, function(currentOption)
 
+	spawn(function()
+
+	  MPlr = currentOption;
+
+	end);
+
+end);
+
+MerkSection:NewButton("Refresh Dropdown", "", function()
+
+  spawn(function()
+
+    GetList();
+
+    mslcplr:Refresh(dropdown);
+
+  end);
+
+end);
+
+MerkSection:NewDropdown("Safezone Locations", "", {"Bar","Building Park","City Square","Evil Lair","Feild","Hero HQ","Hero Lair","Motel","Mountain","Mountain-2","Park","Plains","Prison"}, function(currentOption)
+
+  _M.selectedstat = currentOption;
+
+end);
+
+MerkSection:NewDropdown("Other Locations", "", {"Contruction Building","Corner-1","Corner-2","Corner-3","Corner-4","Ignite Tower","Military Base","Mountain Hole","Police Department","Cave"}, function(currentOption)
+
+  _M.selectedstat = currentOption;
+
+end);
+
+MerkSection:NewDropdown("Unfortunate Locations", "", {"Unfortunate Spot (Secret Area)","Unfortunate Spot (In Building)", "Unfortunate Spot (Trap)","Unfortunate Spot (Space)","Unfortunate Spot (Under Map)","Unfortunate Spot (Dead End)","Unfortunate Spot (Box)","Unfortunate Spot (Arena)","Unfortunate Spot (Backrooms)","Unfortunate Spot (Sex Dungeon)"}, function(currentOption)
+
+  _M.selectedstat = currentOption;
+
+end);
 
 
 
