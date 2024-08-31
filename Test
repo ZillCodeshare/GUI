@@ -1215,7 +1215,7 @@ getgenv().teleport = state
 
 end);
 
-
+_G.selectedstat = "";
 GetList();
 
 local mslcplr = MerkSection:NewDropdown("Select Player", "", dropdown, function(currentOption)
@@ -1258,7 +1258,9 @@ MerkSection:NewDropdown("Unfortunate Locations", "", {"Unfortunate Spot (Secret 
 
 end);
 
-
+	if (_G.selectedstat == "Bar") then
+		print "Bar";
+	end
 
 QSection:NewToggle("Rapid Punch", "", function(state)
 
