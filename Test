@@ -1148,7 +1148,7 @@ local mslcplr = MerkSection:NewDropdown("Select Player", "", dropdown, function(
 
 	spawn(function()
 
-	  _G.Hoe = currentOption;
+	  Hoe = currentOption;
 
 	end);
 
@@ -1174,7 +1174,7 @@ end);
 
 if (_M.selectedstat == "Bar") then
 
-        for i, v in pairs(mslcplr) do
+        for i, v in pairs(Hoe) do
 
         game:GetService("Workspace")[v.Name].HumanoidRootPart.telekinesisPosition:Destroy();
 
