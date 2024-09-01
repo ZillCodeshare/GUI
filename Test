@@ -612,7 +612,7 @@ MFSection:NewDropdown("Unfortunate Locations", "", {"Unfortunate Spot (Secret Ar
   _G.selectedstat = currentOption;
 end);
 
-MFSection:NewButton("Teleport Player", "", function()
+-- MFSection:NewButton("Teleport Player", "", function()
 
 	if (_G.selectedstat == "Unfortunate Spot (Sex Dungeon)") then
 
