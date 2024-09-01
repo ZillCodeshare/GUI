@@ -599,9 +599,8 @@ end);
   end
 end)
 ]]
-local lp = game.Players.LocalPlayer
+local lp = game.Players.LocalPlayer;
 
-MFSection:NewButton("Teleport Player", "", function()
 
 MFSection:NewDropdown("Safezone Locations", "", {"Bar","Building Park","City Square","Evil Lair","Feild","Hero HQ","Hero Lair","Motel","Mountain","Mountain-2","Park","Plains","Prison"}, function(currentOption)
   _G.selectedstat = currentOption;
@@ -612,6 +611,8 @@ end);
 MFSection:NewDropdown("Unfortunate Locations", "", {"Unfortunate Spot (Secret Area)","Unfortunate Spot (In Building)", "Unfortunate Spot (Trap)","Unfortunate Spot (Space)","Unfortunate Spot (Under Map)","Unfortunate Spot (Dead End)","Unfortunate Spot (Box)","Unfortunate Spot (Arena)","Unfortunate Spot (Backrooms)","Unfortunate Spot (Sex Dungeon)"}, function(currentOption)
   _G.selectedstat = currentOption;
 end);
+
+MFSection:NewButton("Teleport Player", "", function()
 
 	if (_G.selectedstat == "Unfortunate Spot (Sex Dungeon)") then
 
