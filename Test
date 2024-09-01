@@ -601,7 +601,7 @@ end)
 ]]
 local lp = game.Players.LocalPlayer
 
-MFSection:NewButton("TeleportPlayer", "", function()
+MFSection:NewButton("Teleport Player", "", function()
 
 MFSection:NewDropdown("Safezone Locations", "", {"Bar","Building Park","City Square","Evil Lair","Feild","Hero HQ","Hero Lair","Motel","Mountain","Mountain-2","Park","Plains","Prison"}, function(currentOption)
   _G.selectedstat = currentOption;
@@ -620,7 +620,7 @@ end);
 		    wait(0.2);
 		    game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(Vector3.new(1, 1, 1), false, game.Players[slcplr].Character);
 	end
-);
+
 
 AHTSection:NewToggle("Start", "", function(state)
 getgenv().teleport = state
