@@ -614,14 +614,14 @@ end);
 
 
 MFSection:NewButton("Teleport Player", "", function()
-if (_G.selectedstat == "Unfortunate Spot (Sex Dungeon)") then
+	if (_G.selectedstat == "Unfortunate Spot (Sex Dungeon)") then
 
-	game:GetService("Workspace")slcplr.HumanoidRootPart.telekinesisPosition:Destroy();
-	game:GetService("Workspace")slcplr.HumanoidRootPart.CFrame = CFrame.new(-1585, 95, -1159);
-	wait(0.2);
-	game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(Vector3.new(1, 1, 1), false, game.Players(slcplr).Character);
- end
-	
+		game:GetService("Workspace")[_G.Hoe].HumanoidRootPart.telekinesisPosition:Destroy();
+		game:GetService("Workspace")[_G.Hoe].HumanoidRootPart.CFrame = CFrame.new(-1585, 95, -1159);
+		wait(0.2);
+		game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(Vector3.new(1, 1, 1), false, game.Players[_G.Hoe].Character);
+	end
+
 end);
 
 AHTSection:NewToggle("Start", "", function(state)
