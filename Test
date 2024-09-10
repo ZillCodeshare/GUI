@@ -191,14 +191,14 @@ TSection:NewButton("Teleport", "", function()
 	getNearPlayer(99);
 	if (_G.selectedstat == "Bar") then
 		if (_G.bring == true) then
-			getNearPlayer(99);
-			for i, v in pairs(plrlist) do
+--			getNearPlayer(99);
+--			for i, v in pairs(plrlist) do
 --				game:GetService("Workspace")[v.Name].HumanoidRootPart.telekinesisPosition:Destroy();
 --				game:GetService("Workspace")[v.Name].HumanoidRootPart.CFrame = CFrame.new(-1313, 197, 149);
 --				wait(0.2);
 --				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(Vector3.new(1, 1, 1), false, game.Players[v.Name].Character);
-                                game.Players.[_G.Hoe].Character.HumanoidRootPart.CFrame = CFrame.new(-1313, 197, 149);
-			end
+                game.Players.[_G.Hoe].Character.HumanoidRootPart.CFrame = CFrame.new(-1313, 197, 149);
+--			end
 		else
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1313, 197, 149);
 			breakvelocity();
