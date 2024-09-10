@@ -149,6 +149,20 @@ GetList = function()
 		table.insert(dropdown, PLR);
 	end
 end;
+
+GetList();
+local slcplr = TSection:NewDropdown("Select Player", "", dropdown, function(currentOption)
+	spawn(function()
+		_G.Hoe = currentOption;
+	end);
+end);
+TSection:NewButton("Refresh Dropdown", "", function()
+	spawn(function()
+		GetList();
+		slcplr:Refresh(dropdown);
+	end);
+end);
+
 TSection:NewDropdown("Safezone Locations", "", {"Bar","Building Park","City Square","Evil Lair","Feild","Hero HQ","Hero Lair","Motel","Mountain","Mountain-2","Park","Plains","Prison"}, function(currentOption)
 	_G.selectedstat = currentOption;
 end);
@@ -179,10 +193,11 @@ TSection:NewButton("Teleport", "", function()
 		if (_G.bring == true) then
 			getNearPlayer(99);
 			for i, v in pairs(plrlist) do
-				game:GetService("Workspace")[v.Name].HumanoidRootPart.telekinesisPosition:Destroy();
-				game:GetService("Workspace")[v.Name].HumanoidRootPart.CFrame = CFrame.new(-1313, 197, 149);
-				wait(0.2);
-				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(Vector3.new(1, 1, 1), false, game.Players[v.Name].Character);
+--				game:GetService("Workspace")[v.Name].HumanoidRootPart.telekinesisPosition:Destroy();
+--				game:GetService("Workspace")[v.Name].HumanoidRootPart.CFrame = CFrame.new(-1313, 197, 149);
+--				wait(0.2);
+--				game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(Vector3.new(1, 1, 1), false, game.Players[v.Name].Character);
+                                game.Players.[_G.Hoe].Character.HumanoidRootPart.CFrame = CFrame.new(-1313, 197, 149);
 			end
 		else
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1313, 197, 149);
