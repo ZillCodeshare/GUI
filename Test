@@ -602,13 +602,13 @@ end)
 local lp = game.Players.LocalPlayer;
 
 
-MFSection:NewDropdown("Safezone Locations", "", {"Bar","Building Park","City Square","Evil Lair","Feild","Hero HQ","Hero Lair","Motel","Mountain","Mountain-2","Park","Plains","Prison"}, function(currentOption)
+local MFSection:NewDropdown("Safezone Locations", "", {"Bar","Building Park","City Square","Evil Lair","Feild","Hero HQ","Hero Lair","Motel","Mountain","Mountain-2","Park","Plains","Prison"}, function(currentOption)
 	_G.selectedstat = currentOption;
 end);
-MFSection:NewDropdown("Other Locations", "", {"Contruction Building","Corner-1","Corner-2","Corner-3","Corner-4","Ignite Tower","Military Base","Mountain Hole","Police Department","Cave"}, function(currentOption)
+local MFSection:NewDropdown("Other Locations", "", {"Contruction Building","Corner-1","Corner-2","Corner-3","Corner-4","Ignite Tower","Military Base","Mountain Hole","Police Department","Cave"}, function(currentOption)
 	_G.selectedstat = currentOption;
 end);
-MFSection:NewDropdown("Unfortunate Locations", "", {"Unfortunate Spot (Secret Area)","Unfortunate Spot (In Building)", "Unfortunate Spot (Trap)","Unfortunate Spot (Space)","Unfortunate Spot (Under Map)","Unfortunate Spot (Dead End)","Unfortunate Spot (Box)","Unfortunate Spot (Arena)","Unfortunate Spot (Backrooms)","Unfortunate Spot (Sex Dungeon)"}, function(currentOption)
+local MFSection:NewDropdown("Unfortunate Locations", "", {"Unfortunate Spot (Secret Area)","Unfortunate Spot (In Building)", "Unfortunate Spot (Trap)","Unfortunate Spot (Space)","Unfortunate Spot (Under Map)","Unfortunate Spot (Dead End)","Unfortunate Spot (Box)","Unfortunate Spot (Arena)","Unfortunate Spot (Backrooms)","Unfortunate Spot (Sex Dungeon)"}, function(currentOption)
 	_G.selectedstat = currentOption;
 end);
 
@@ -616,13 +616,20 @@ end);
 MFSection:NewButton("Teleport Player", "", function()
 	if (_G.selectedstat == "Unfortunate Spot (Sex Dungeon)") then
 
-		game:GetService("Workspace")[_G.Hoe].HumanoidRootPart.telekinesisPosition:Destroy();
-		game:GetService("Workspace")[_G.Hoe].HumanoidRootPart.CFrame = CFrame.new(-1585, 95, -1159);
-		wait(0.2);
-		game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(Vector3.new(1, 1, 1), false, game.Players[_G.Hoe].Character);
+		
+	spawn(function()
+		local p1 = game.Players.LocalPlayer.Character.HumanoidRootPart;
+		p1.CFrame = game.Players[_G.Hoe].Character.HumanoidRootPart.CFrame = CFrame.new(-1585, 95, 1159);
+		breakvelocity();
+	end);
+
+		-- game:GetService("Workspace")[_G.Hoe].HumanoidRootPart.telekinesisPosition:Destroy();
+		-- game:GetService("Workspace")[_G.Hoe].HumanoidRootPart.CFrame = CFrame.new(-1585, 95, -1159);
+		-- wait(0.2);
+		-- game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(Vector3.new(1, 1, 1), false, game.Players[_G.Hoe].Character);
 	end
 
-end);
+end); 
 
 AHTSection:NewToggle("Start", "", function(state)
 	getgenv().teleport = state
