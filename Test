@@ -2866,6 +2866,15 @@ Toggle.TextColor3 = Color3.fromRGB(248, 248, 248)
 Toggle.TextSize = 22.000
 Toggle.Draggable = true
 Toggle.MouseButton1Click:connect(function()
+
+spawn(function()
+    local LookVector = game.Workspace.Camera.CFrame.LookVector;
+    game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector, true);
+    game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector, false);
+  end);
+wait();
+
+
     spawn(function()
 	  getNearPlayer(99);
     for i, v in pairs(plrlist) do
@@ -2873,12 +2882,6 @@ Toggle.MouseButton1Click:connect(function()
 
 			else
 
-spawn(function()
-    local LookVector = game.Workspace.Camera.CFrame.LookVector;
-    game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector, true);
-    game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector, false);
-  
-wait();
         spawn(function()
 				  v.Head.Neck:Destroy();
           plrlist = {};wait();
