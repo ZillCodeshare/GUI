@@ -2876,15 +2876,15 @@ spawn(function()
 wait();
 
         spawn(function()
-             for i, v in pairs(Players:GetPlayers()) do
-  				  v.Head.Neck:Destroy();
-             end 
+          for i, v in pairs(Players:GetPlayers()) do
+  	      v.Head.Neck:Destroy();
+
           plrlist = {};wait();
           spawn(function()
             game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(Vector3.new(1, 1, 1), false, game.Players[v.Name].Character);
           end);
-        end);
-  
+         end
+    end);
 end)
 
 local Corner = Instance.new("UICorner")
