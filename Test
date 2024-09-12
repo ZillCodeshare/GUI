@@ -2888,6 +2888,11 @@ Toggle.MouseButton1Click:connect(function()
    end);
 end)
 
+local Corner = Instance.new("UICorner")
+Corner.Name = "Corner"
+Corner.Parent = Toggle
+end);
+
 HAHNGASection:NewButton("Release", "", function()
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Name = "ScreenGui"
