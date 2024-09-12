@@ -2871,6 +2871,7 @@ Toggle.MouseButton1Click:connect(function()
 	  getNearPlayer(99);
     for i, v in pairs(plrlist) do
       if (v == player) then
+    end);
 
 			else
 
@@ -2891,7 +2892,7 @@ wait();
         end);
       end
     end
-  end);
+  
 end)
 
 local Corner = Instance.new("UICorner")
