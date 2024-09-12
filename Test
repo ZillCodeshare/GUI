@@ -2863,29 +2863,44 @@ Toggle.Size = UDim2.new(0, 90, 0, 38)
 Toggle.Font = Enum.Font.SourceSans
 Toggle.Text = "Kill Player"
 Toggle.TextColor3 = Color3.fromRGB(248, 248, 248)
+HAHNGASection:NewButton("Kill", "", function()
+local Corner = Instance.new("UICorner")
+Corner.Name = "Corner"
+Corner.Parent = Toggle
+
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "ScreenGui"
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ResetOnSpawn = false
+
+local Toggle = Instance.new("TextButton")
+Toggle.Name = "z"
+Toggle.Parent = ScreenGui
+Toggle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Toggle.Position = UDim2.new(0, 0, 0.454706937, 0)
+Toggle.Size = UDim2.new(0, 90, 0, 38)
+Toggle.Font = Enum.Font.SourceSans
+Toggle.Text = "Kill Player"
+Toggle.TextColor3 = Color3.fromRGB(248, 248, 248)
 Toggle.TextSize = 22.000
 Toggle.Draggable = true
 Toggle.MouseButton1Click:connect(function()
- spawn(function()
-  getNearPlayer(99);
-   for i, v in pairs(plrlist) do
+    spawn(function()
+	  getNearPlayer(99);
+    for i, v in pairs(plrlist) do
       if (v == player) then
 
 			else
-
-         spawn(function()
-            local LookVector = game.Workspace.Camera.CFrame.LookVector;
-            game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector, true);
-            game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector, false);
-
-	 v.Head.Neck:Destroy();
+        spawn(function()
+				  v.Head.Neck:Destroy();
           plrlist = {};wait();
           spawn(function()
             game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(Vector3.new(1, 1, 1), false, game.Players[v.Name].Character);
           end);
-         end);
+        end);
       end
-   end);
+    end
+  end);
 end)
 
 local Corner = Instance.new("UICorner")
