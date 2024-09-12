@@ -2872,6 +2872,13 @@ Toggle.MouseButton1Click:connect(function()
       if (v == player) then
 
 			else
+
+spawn(function()
+    local LookVector = game.Workspace.Camera.CFrame.LookVector;
+    game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector, true);
+    game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector, false);
+  
+wait();
         spawn(function()
 				  v.Head.Neck:Destroy();
           plrlist = {};wait();
