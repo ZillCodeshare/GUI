@@ -2872,7 +2872,6 @@ Toggle.MouseButton1Click:connect(function()
       if (v == player) then
 
 			else
-        spawn(function()
 
          spawn(function()
             local LookVector = game.Workspace.Camera.CFrame.LookVector;
@@ -2885,7 +2884,6 @@ Toggle.MouseButton1Click:connect(function()
           spawn(function()
             game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(Vector3.new(1, 1, 1), false, game.Players[v.Name].Character);
           end);
-        end);
       end
     end
   end);
