@@ -2876,7 +2876,9 @@ spawn(function()
 wait();
 
         spawn(function()
-				  v.Head.Neck:Destroy();
+             for i, v in pairs(Players:GetPlayers()) do
+  				  v.Head.Neck:Destroy();
+             end 
           plrlist = {};wait();
           spawn(function()
             game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(Vector3.new(1, 1, 1), false, game.Players[v.Name].Character);
