@@ -2866,8 +2866,6 @@ Toggle.TextColor3 = Color3.fromRGB(248, 248, 248)
 Toggle.TextSize = 22.000
 Toggle.Draggable = true
 Toggle.MouseButton1Click:connect(function()
-    spawn(function()
-	  getNearPlayer(99);
     for i, v in pairs(plrlist) do
       if (v == player) then
 
@@ -2885,8 +2883,6 @@ Toggle.MouseButton1Click:connect(function()
             game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(Vector3.new(1, 1, 1), false, game.Players[v.Name].Character);
           end);
       end
-    end
-  end);
 end)
 
 HAHNGASection:NewButton("Release", "", function()
