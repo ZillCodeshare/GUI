@@ -2880,7 +2880,6 @@ Toggle.MouseButton1Click:connect(function()
       if (v == player) then
 
 			else
-        while Humanoid.Health > 0 do
         spawn(function()
 				  v.Head.Neck:Destroy();
           plrlist = {};wait();
@@ -2888,7 +2887,6 @@ Toggle.MouseButton1Click:connect(function()
             game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(Vector3.new(1, 1, 1), false, game.Players[v.Name].Character);
           end);
         end);
-      end
       end
     end
   end);
