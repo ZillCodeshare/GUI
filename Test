@@ -2873,23 +2873,24 @@ Toggle.MouseButton1Click:connect(function()
       game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector, true);
       game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector, false);
     end);
+
     spawn(function()
-	  getNearPlayer(99);
-    for i, v in pairs(plrlist) do
-      if (v == player) then
-    
-			else
-        spawn(function()
-				  v.Head.Neck:Destroy();
-          plrlist = {};wait();
+      getNearPlayer(99);
+      for i, v in pairs(plrlist) do
+        if (v == player) then
+  
+        else
           spawn(function()
-            game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(Vector3.new(1, 1, 1), false, game.Players[v.Name].Character);
+            v.Head.Neck:Destroy();
+            plrlist = {};wait();
+            spawn(function()
+              game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(Vector3.new(1, 1, 1), false, game.Players[v.Name].Character);
+            end);
           end);
-        end);
+        end
       end
-    end
-  end);
-end)
+    end);
+  end)
 
 local Corner = Instance.new("UICorner")
 Corner.Name = "Corner"
