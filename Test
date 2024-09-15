@@ -2873,14 +2873,13 @@ Toggle.MouseButton1Click:connect(function()
       game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector, true);
       game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(LookVector, false);
     end);
-
+while i <= 5 do 
     spawn(function()
 	  getNearPlayer(99);
     for i, v in pairs(plrlist) do
       if (v == player) then
     
 			else
-        while i <= 5 do
         spawn(function()
 				  v.Head.Neck:Destroy();
           plrlist = {};wait();
@@ -2888,11 +2887,11 @@ Toggle.MouseButton1Click:connect(function()
             game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(Vector3.new(1, 1, 1), false, game.Players[v.Name].Character);
           end);
         end);
-          i = i + 1
-      end
       end
     end
+    i = i + 1
   end);
+end
 end)
 
 local Corner = Instance.new("UICorner")
