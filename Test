@@ -2101,10 +2101,10 @@ MSection:NewToggle("Gives Player Rapid Punch", "Gives Assigned Player Rapid Punc
     if state then
       getgenv().at = true
       while at do
-        game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1),false,game:GetService("Players")[_G.tplayer].Character;
-        game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1),false,game:GetService("Players")[_G.tplayer].Character;
-        game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1),false,game:GetService("Players")[_G.tplayer].Character;
-        game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1),false,game:GetService("Players")[_G.tplayer].Character;
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer((0, 0.1, 1),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer((0, 0.1, 1),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer((0, 0.1, 1),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer((0, 0.1, 1),false,game:GetService("Players")[_G.tplayer].Character);
         wait()
       end
 
