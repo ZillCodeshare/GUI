@@ -2096,23 +2096,7 @@ MSection:NewToggle("Gives Player Anti-Tele", "Gives Assigned Player Anti Tele", 
     end
   end);
 end);
-MSection:NewToggle("Gives Player Rapid Punch", "Gives Assigned Player Rapid Punch", function(state)
-  spawn(function()
-    if state then
-      getgenv().at = true
-      while at do
-        game:GetService("ReplicatedStorage").Events.Punch:FireServer((0, 0.1, 1),false,game:GetService("Players")[_G.tplayer].Character);
-        game:GetService("ReplicatedStorage").Events.Punch:FireServer((0, 0.1, 1),false,game:GetService("Players")[_G.tplayer].Character);
-        game:GetService("ReplicatedStorage").Events.Punch:FireServer((0, 0.1, 1),false,game:GetService("Players")[_G.tplayer].Character);
-        game:GetService("ReplicatedStorage").Events.Punch:FireServer((0, 0.1, 1),false,game:GetService("Players")[_G.tplayer].Character);
-        wait()
-      end
 
-    else
-      getgenv().at = false
-    end
-  end);
-end);
 MSection:NewToggle("Laser", "", function(state)
   spawn(function()
     if state then
