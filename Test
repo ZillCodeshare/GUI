@@ -2099,7 +2099,7 @@ end);
 MSection:NewToggle("Gives Player Rapid Punch","", function(state)
   spawn(function()
     if state then
-      getgenv().at = true
+      getgenv().rp = true
       while at do
        task.spawn(function()
         game:GetService("ReplicatedStorage").Events.Punch:FireServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character);
@@ -2146,7 +2146,7 @@ MSection:NewToggle("Gives Player Rapid Punch","", function(state)
       end
 
     else
-      getgenv().at = false
+      getgenv().rp = false
     end
   end);
 end);
