@@ -2101,6 +2101,9 @@ MSection:NewToggle("Gives Player Rapid Punch","", function(state)
     if state then
       getgenv().at = true
       while at do
+        game:GetService("ReplicatedStorage").Events.Punch:InvokeServer(Vector3.new(0,0,0),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:InvokeServer(Vector3.new(0,0,0),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:InvokeServer(Vector3.new(0,0,0),false,game:GetService("Players")[_G.tplayer].Character);
         game:GetService("ReplicatedStorage").Events.Punch:InvokeServer(Vector3.new(0,0,0),false,game:GetService("Players")[_G.tplayer].Character)
         wait()
       end
