@@ -2096,6 +2096,20 @@ MSection:NewToggle("Gives Player Anti-Tele", "Gives Assigned Player Anti Tele", 
     end
   end);
 end);
+MSection:NewToggle("Gives Player Anti-Tele", "Gives Assigned Player Anti Tele", function(state)
+  spawn(function()
+    if state then
+      getgenv().at = true
+      while at do
+        game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(Vector3.new(0,0,0),false,game:GetService("Players")[_G.tplayer].Character)
+        wait()
+      end
+
+    else
+      getgenv().at = false
+    end
+  end);
+end);
 MSection:NewToggle("Laser", "", function(state)
   spawn(function()
     if state then
