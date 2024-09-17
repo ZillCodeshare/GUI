@@ -2096,7 +2096,6 @@ MSection:NewToggle("Gives Player Anti-Tele", "Gives Assigned Player Anti Tele", 
     end
   end);
 end);
-
 MSection:NewToggle("Laser", "", function(state)
   spawn(function()
     if state then
