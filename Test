@@ -2101,13 +2101,48 @@ MSection:NewToggle("Gives Player Rapid Punch","", function(state)
     if state then
       getgenv().at = true
       while at do
-       spawn(function()
-        game:GetService("ReplicatedStorage").Events.Punch:InvokeServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character);
-        game:GetService("ReplicatedStorage").Events.Punch:InvokeServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character);
-        game:GetService("ReplicatedStorage").Events.Punch:InvokeServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character);
-        game:GetService("ReplicatedStorage").Events.Punch:InvokeServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character)
+       task.spawn(function()
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character)
        end); 
+
       wait()
+
+       task.spawn(function()
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character);
+        game:GetService("ReplicatedStorage").Events.Punch:FireServer(Vector3.new(0,0.1,1),false,game:GetService("Players")[_G.tplayer].Character)
+       end); 
+
+      wait()
+
       end
 
     else
