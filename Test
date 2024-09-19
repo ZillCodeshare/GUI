@@ -588,7 +588,7 @@ AHMSection:NewToggle("Start", "", function(state)
   getgenv().startfarm = state
 end);
 
---[[game:GetService("RunService").Stepped:connect(function()
+game:GetService("RunService").Stepped:connect(function()
   if getgenv().startfarm == true then
   spawn(function()
 	  local p1 = game.Players.LocalPlayer.Character.HumanoidRootPart;
@@ -597,7 +597,7 @@ end);
   end);
   end
 end)
-]]
+
 local lp = game.Players.LocalPlayer
 
 
