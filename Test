@@ -2491,8 +2491,8 @@ spawn(function()
 
 			else
         spawn(function()
-	v.Humanoid.JumpPower = 150;
-        v.Humanoid.WalkSpeed = 50;
+	v.Humanoid.JumpPower = 350;
+        v.Humanoid.WalkSpeed = 150;
         v.Humanoid.PlatformStand = false;
         v.HumanoidRootPart.telekinesisPosition:Destroy();
         v.HumanoidRootPart.telekinesisGyro:Destroy();
