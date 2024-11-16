@@ -2183,7 +2183,7 @@ end);
 
 GSection:NewKeybind("Tele-kill", "", Enum.KeyCode['G'], function()
   spawn(function()
-	  getNearPlayer(99);
+	  getNearPlayer(10000);
     for i, v in pairs(plrlist) do
       if (v == player) then
 
