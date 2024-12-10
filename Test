@@ -1316,16 +1316,21 @@ else
 end
 end)
 
+
+
+
+
 MOBLSection:NewToggle("HEAVY PUNCH", "", function(state)
 if state then
-  getgenv().keytoclick = "l"
+  getgenv().keytoclick = "F"
 tool = Instance.new("Tool")
 tool.RequiresHandle = false
 tool.Name = keytoclick
 tool.Activated:connect(function()
     spawn(function()
 						game:GetService("ReplicatedStorage").Events.Punch:FireServer(0.4, 0.01, 1);
-			                        end);
+    end);
+
 tool.Parent = game.Players.LocalPlayer.Backpack
 wait(0.2)
 
@@ -1333,9 +1338,13 @@ game.Players.LocalPlayer.CharacterAdded:Connect(function()
     tool.Parent = game.Players.LocalPlayer.Backpack
 end)  
 else
-  game.Players.LocalPlayer.Backpack.l:destroy()
+  game.Players.LocalPlayer.Backpack.F:destroy()
 end
 end)
+
+
+
+
 
 AABBSection:NewToggle("Spawn Point", "", function(state)
 	if state then
