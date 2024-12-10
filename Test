@@ -1329,7 +1329,7 @@ tool.Name = keytoclick
 tool.Activated:connect(function()
     spawn(function()
 						game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.01, 1);
-                                                wait(0.2);
+                                                wait(0.5);
                                             
     end);
 
