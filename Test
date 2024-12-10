@@ -1328,7 +1328,7 @@ tool.RequiresHandle = false
 tool.Name = keytoclick
 tool.Activated:connect(function()
     spawn(function()
-	game:GetService("ReplicatedStorage").Events.Punch:FireServer(4.0, 4.0, 1);
+	game:GetService("ReplicatedStorage").Events.Punch:FireServer(0.8, 0.5, 1);
         
                                             
     end);
