@@ -1331,6 +1331,7 @@ tool.Activated:connect(function()
 						game:GetService("ReplicatedStorage").Events.Punch:FireServer(0.4, 0.01, 1);
     end);
 
+end)
 tool.Parent = game.Players.LocalPlayer.Backpack
 wait(0.2)
 
