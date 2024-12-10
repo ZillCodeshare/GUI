@@ -1330,7 +1330,7 @@ tool.Activated:connect(function()
     spawn(function()
 						game:GetService("ReplicatedStorage").Events.Punch:FireServer(0.4, 0.01, 1);
                                                 wait(0.2);
-                                                game:GetService("ReplicatedStorage").Events.Punch:FireServer(0.4, 0.01, 1);    
+                                            
     end);
 
 end)
