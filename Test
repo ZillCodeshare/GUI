@@ -2907,7 +2907,7 @@ Toggle.MouseButton1Click:connect(function()
     end);
 
     spawn(function()
-      getNearPlayer(10000);
+      getNearPlayer(100000);
       for i, v in pairs(plrlist) do
         if (v == player) then
   
