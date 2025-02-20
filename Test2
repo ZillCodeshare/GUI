@@ -36,7 +36,7 @@ hum.Jumping:Connect(function(state)
 	end
 
 end)
-
+end)
 tool.Parent = game.Players.LocalPlayer.Backpack
 wait(0.2)
 
