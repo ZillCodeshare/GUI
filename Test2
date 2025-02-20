@@ -12,8 +12,13 @@ tool = Instance.new("Tool")
 tool.RequiresHandle = false
 tool.Name = keytoclick
 tool.Activated:connect(function()
- if (game.Players.LocalPlayer.Character.Humanoid.Jump) then
-  spawn(function()
+
+local character = script.Parent
+local hum = character:WaitForChild("Humanoid")
+
+hum.Jumping:Connect(function(state)
+	if state == true then -- if humanoid has jumped
+             spawn(function()
 						game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
 						game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
 						game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
@@ -24,10 +29,11 @@ tool.Activated:connect(function()
 						game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
 						game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
 						game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
-  end);
-else 
-    game.Players.LocalPlayer.Character.Humanoid.Jump = false
- end 
+          end);
+		
+	else 
+	end
+
 end)
 tool.Parent = game.Players.LocalPlayer.Backpack
 wait(0.2)
