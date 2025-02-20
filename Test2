@@ -29,12 +29,14 @@ hum.Jumping:Connect(function(state)
 						game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
 						game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
 						game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
-          end);
+            end);
 		
 	else 
+          print("Shit")
 	end
 
 end)
+
 tool.Parent = game.Players.LocalPlayer.Backpack
 wait(0.2)
 
