@@ -54,7 +54,9 @@ tool.Activated:connect(function()
 						game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
 						game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
 						game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
-					end);
+  end);
+else 
+    game.Players.LocalPlayer.Character.Humanoid.Jump = false;
  end 
 end)
 tool.Parent = game.Players.LocalPlayer.Backpack
