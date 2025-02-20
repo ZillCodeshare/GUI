@@ -4,3 +4,38 @@ local Window = Library.CreateLib("Kinos GUI - Age Of Heros", "Serpent");
 local jpTab = Window:NewTab("JumPunch");
 local jpSection = jpTab:NewSection("Select");
 
+jpSection:NewToggle("JumPunch", "", function(state)
+
+if state then
+  getgenv().keytoclick = "A"
+tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = keytoclick
+tool.Activated:connect(function()
+ if(game.Players.LocalPlayer.Character.Humanoid.Jump = true) then
+  spawn(function()
+						game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+						game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+						game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+						game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+						game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+						game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+						game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+						game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+						game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+						game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
+  end);
+else 
+    game.Players.LocalPlayer.Character.Humanoid.Jump = false
+ end 
+end)
+tool.Parent = game.Players.LocalPlayer.Backpack
+wait(0.2)
+
+game.Players.LocalPlayer.CharacterAdded:Connect(function()
+    tool.Parent = game.Players.LocalPlayer.Backpack
+end)      
+else
+  game.Players.LocalPlayer.Backpack.A:destroy()
+end
+end)
