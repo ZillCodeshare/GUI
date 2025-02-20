@@ -1,1 +1,37 @@
+local mod = {
+ 147548657,
+ 1111188468,
+ 59121896,
+  11073505,
+ 237922,
+  30929052,
+  83051521,
+  1311715825,
+  9754162,
+  381012618,
+
+
+}
+
+for l, c in pairs(game.Players:GetChildren()) do
+for i, v in pairs(mod) do
+if c.UserId == v then
+print("Mod Dedected")
+end
+end
+end
+game.Players.PlayerAdded:Connect(function(plr)
+for i, v in pairs(mod) do
+if plr.UserId == v then
+game:GetService("StarterGui"):SetCore("SendNotification",{
+                Title = "Warn";
+                Text = "Moderator Joined";
+            })
+end
+end
+end)
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZillCodeshare/GUI/main/Kavo"))()
+local Window = Library.CreateLib("Kinos GUI - Age Of Heros", "Serpent");
 game.Players.LocalPlayer.Character.Humanoid.Jump = true
+
