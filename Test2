@@ -2,6 +2,8 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZillC
 local Window = Library.CreateLib("Kinos GUI - Age Of Heros", "Serpent");
 
 local jpTab = Window:NewTab("JumPunch");
+local jpSection = jpTab:NewSection("Select");
+
 jpSection:NewToggle("JumPunch", "", function(state)
 
 if state then
