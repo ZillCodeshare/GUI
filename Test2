@@ -4,6 +4,9 @@ local Window = Library.CreateLib("Kinos GUI - Age Of Heros", "Serpent");
 local jpTab = Window:NewTab("JumPunch");
 local jpSection = jpTab:NewSection("Select");
 
+local character = script.Parent
+local hum = character:WaitForChild("Humanoid")
+
 jpSection:NewToggle("JumPunch", "", function(state)
 
 if state then
@@ -12,9 +15,6 @@ tool = Instance.new("Tool")
 tool.RequiresHandle = false
 tool.Name = keytoclick
 tool.Activated:connect(function()
-
-local character = script.Parent
-local hum = character:WaitForChild("Humanoid")
 
 hum.Jumping:Connect(function(state)
 	if state == true then -- if humanoid has jumped
