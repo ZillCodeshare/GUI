@@ -16,8 +16,8 @@ tool.RequiresHandle = false
 tool.Name = keytoclick
 tool.Activated:connect(function()
 
-hum.Jumping:Connect(function(state)
-	if state == true then -- if humanoid has jumped
+hum.Jumping:Connect(function(states)
+	if states == true then -- if humanoid has jumped
              spawn(function()
 						game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
 						game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
