@@ -12,7 +12,7 @@ tool = Instance.new("Tool")
 tool.RequiresHandle = false
 tool.Name = keytoclick
 tool.Activated:connect(function()
- if (game.Players.LocalPlayer.Character.Humanoid.Jump = true) then
+ if (game.Players.LocalPlayer.Character.Humanoid.Jump) then
   spawn(function()
 						game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
 						game:GetService("ReplicatedStorage").Events.Punch:FireServer(0, 0.1, 1);
