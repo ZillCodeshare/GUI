@@ -2844,27 +2844,27 @@ Toggle.TextSize = 22.000
 Toggle.Draggable = true
 Toggle.MouseButton1Click:connect(function()
     if (_G.CToggle == false) then
-    spawn(function()
-		  getNearPlayer(99);
-      wait();
-      _G.CToggle = true;
-      getgenv().CarryP = true;
-      while CarryP do
-        wait();
-        spawn(function()
-          for i, v in pairs(plrlist) do
-            if (v == player) then
-
-            else
-              Xt = player.Character.HumanoidRootPart.Position['X'];
-              Yt = player.Character.HumanoidRootPart.Position['Y'];
-              Zt = player.Character.HumanoidRootPart.Position['Z'];
-              game:GetService("Workspace")[v.Name].HumanoidRootPart.telekinesisPosition.Position = Vector3.new(Xt + getgenv().posX, Yt + getgenv().posY, Zt + getgenv().posZ);
-            end
-          end
-        end);
-      end
-    end);
+    if (_G.CToggle == false) then
+		spawn(function()
+			getNearPlayer(99);
+			wait();
+			_G.CToggle = true;
+			getgenv().CarryP = true;
+			while CarryP do
+				wait();
+				spawn(function()
+					for i, v in pairs(plrlist) do
+						if (v == player) then
+						else
+							Xt = player.Character.HumanoidRootPart.Position['X'];
+							Yt = player.Character.HumanoidRootPart.Position['Y'];
+							Zt = player.Character.HumanoidRootPart.Position['Z'];
+							game:GetService("Workspace")[v.Name].HumanoidRootPart.telekinesisPosition.Position = Vector3.new(Xt, Yt + 8, Zt + 5);
+						end
+					end
+				end);
+			end
+		end);
   else
     spawn(function()
       _G.CToggle = false;
