@@ -2844,9 +2844,8 @@ Toggle.TextSize = 22.000
 Toggle.Draggable = true
 Toggle.MouseButton1Click:connect(function()
     if (_G.CToggle == false) then
-    if (_G.CToggle == false) then
 		spawn(function()
-			getNearPlayer(99);
+			getNearPlayer(999);
 			wait();
 			_G.CToggle = true;
 			getgenv().CarryP = true;
