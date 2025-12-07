@@ -1,0 +1,72 @@
+	function MacroHeavyTool()
+		local ReplicatedStorage = game:GetService("ReplicatedStorage")
+		local PunchEvent = ReplicatedStorage:FindFirstChild("Events") and
+			ReplicatedStorage.Events:FindFirstChild("Punch")
+	
+		local RapidTool = Instance.new("Tool")
+		RapidTool.Name = "Heavy Macro"
+		RapidTool.RequiresHandle = false
+	
+		local player = game.Players.LocalPlayer
+		local backpack = player:FindFirstChild("Backpack")
+		if backpack then
+			RapidTool.Parent = backpack
+		else
+			warn("Backpack nicht gefunden!")
+		end
+	
+		-- Debounce-Variable
+		local debounce = false
+	
+		RapidTool.Activated:Connect(function()
+			if debounce then return end
+			debounce = true
+	
+			if PunchEvent then
+				PunchEvent:FireServer(0.4, 0.1, 1)
+			end
+	
+			task.delay(0.73, function()
+				debounce = false
+			end)
+		end)
+	end
+	
+
+	function MacroLightTool()
+		local ReplicatedStorage = game:GetService("ReplicatedStorage")
+		local PunchEvent = ReplicatedStorage:FindFirstChild("Events") and
+			ReplicatedStorage.Events:FindFirstChild("Punch")
+	
+		local RapidTool = Instance.new("Tool")
+		RapidTool.Name = "Light Macro"
+		RapidTool.RequiresHandle = false
+	
+		local player = game.Players.LocalPlayer
+		local backpack = player:FindFirstChild("Backpack")
+		if backpack then
+			RapidTool.Parent = backpack
+		else
+			warn("Backpack nicht gefunden!")
+		end
+	
+		-- Debounce-Variable
+		local debounce = false
+	
+		RapidTool.Activated:Connect(function()
+			if debounce then return end
+			debounce = true
+	
+			if PunchEvent then
+				PunchEvent:FireServer(0.2, 0.1, 1)
+			end
+	
+			task.delay(0.73, function()
+				debounce = false
+			end)
+		end)
+	end
+	
+
+MacroHeavyTool()
+MacroLightTool()
