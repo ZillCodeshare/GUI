@@ -1,0 +1,13 @@
+for i = 1, 100000 do                                                                                                                          local args = {
+	"collectOrb",
+	"Red Orb",
+	"City"
+}
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer(unpack(args))
+local args = {
+	"collectOrb",
+	"Gem",
+	"City"
+}
+game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("orbEvent"):FireServer(unpack(args))
+end
