@@ -37,4 +37,13 @@ local Window = Library.CreateLib("Kinos GUI - Age Of Heros", "Serpent");
 local farmTab = Window:NewTab("Farm");
 local farmSection = farmTab:NewSection("Farm");
 
+local MTab = Window:NewTab("Target");
+local MSection = MTab:NewSection("Target");
+
+local QTab = Window:NewTab("Rapid Punch");
+local QSection = QTab:NewSection("PC");
+local MOBLSection = QTab:NewSection("MOBILE");
+
+local AABBTab = Window:NewTab("Toggle's");
+local AABBSection = AABBTab:NewSection("Toggle's");
 
