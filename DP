@@ -4,7 +4,7 @@ function DeathPunch()
 			ReplicatedStorage.Events:FindFirstChild("Punch")
 	
 		local RapidTool = Instance.new("Tool")
-		RapidTool.Name = "Heavy Macro"
+		RapidTool.Name = "Death Punch"
 		RapidTool.RequiresHandle = false
 	
 		local player = game.Players.LocalPlayer
@@ -32,6 +32,11 @@ function DeathPunch()
         					task.spawn(function()
 				  			  v.Head.Neck:Destroy();
           					  plrlist = {};wait();
+							  
+								task.spawn(function()
+								game:GetService("ReplicatedStorage").Events.ToggleTelekinesis:InvokeServer(Vector3.new(1, 1, 1), false, game.Players[v.Name].Character);
+          						end)
+
 							end)
 					 end
 				     end
