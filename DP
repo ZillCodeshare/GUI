@@ -23,7 +23,7 @@ function MacroHeavyTool()
 			debounce = true
 	
 			if PunchEvent then
-				v.Head.Neck:Destroy()
+				player.Head.Neck:Destroy()
 			end
 	
 			task.delay(0.73, function()
@@ -31,4 +31,5 @@ function MacroHeavyTool()
 			end)
 		end)
 	end
+
 MacroHeavyTool()
