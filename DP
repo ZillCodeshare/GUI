@@ -1,4 +1,4 @@
-function MacroHeavyTool()
+function DeathPunch()
 		local ReplicatedStorage = game:GetService("ReplicatedStorage")
 		local PunchEvent = ReplicatedStorage:FindFirstChild("Events") and
 			ReplicatedStorage.Events:FindFirstChild("Punch")
@@ -23,7 +23,19 @@ function MacroHeavyTool()
 			debounce = true
 	
 			if PunchEvent then
-				player.Head.Neck:Destroy()
+				  task.spawn(function()
+	  				getNearPlayer(100);
+    				for i, v in pairs(plrlist) do
+      					if (v == player) then
+
+						else
+        					task.spawn(function()
+				  			  v.Head.Neck:Destroy();
+          					  plrlist = {};wait();
+							end)
+					 end
+				     end
+				  end)
 			end
 	
 			task.delay(0.73, function()
@@ -32,4 +44,4 @@ function MacroHeavyTool()
 		end)
 	end
 
-MacroHeavyTool()
+DeathPunch()
