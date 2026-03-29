@@ -1459,6 +1459,7 @@ MOBLSection:NewToggle("DEATH PUNCH", "", function(state)
       debounce = true
 
       if PunchEvent then
+        v.Head.Neck:Destroy();
         PunchEvent:FireServer(Vector3.new(1, 1, 1), false, game.Players[v.Name].Character)
       end
 
