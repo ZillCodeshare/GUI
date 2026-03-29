@@ -1338,7 +1338,6 @@ tool.Activated:connect(function()
 			if debounce then return end
 			debounce = true
 
-		RapidTool.Activated:Connect(function()	
 			if PunchEvent then
 				PunchEvent:FireServer(0.4, 0.1, 1)
 			end
@@ -1349,7 +1348,7 @@ tool.Activated:connect(function()
 		end)
         
                                             
-    end);
+    end
 
 end)
 tool.Parent = game.Players.LocalPlayer.Backpack
