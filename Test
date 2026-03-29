@@ -1320,14 +1320,16 @@ end)
 
 
 
-MOBLSection:NewToggle("DOUBLE TAP", "", function(state)
+MOBLSection:NewToggle("Heavy Macro", "", function(state)
 if state then
   getgenv().keytoclick = "F"
 tool = Instance.new("Tool")
 tool.RequiresHandle = false
 tool.Name = keytoclick
 tool.Activated:connect(function()
-    spawn(function()
+
+
+	spawn(function()
 	game:GetService("ReplicatedStorage").Events.Punch:FireServer(0.8, 0.5, 1);
         
                                             
