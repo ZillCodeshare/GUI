@@ -1321,9 +1321,9 @@ end)
 MOBLSection:NewToggle("HEAVY MACRO", "", function(state)
 if state then
   getgenv().keytoclick = "F"
-tool = Instance.new("Tool")
-tool.RequiresHandle = false
-tool.Name = "HEAVY MACRO"
+HeavyTool = Instance.new("Tool")
+HeavyTool.RequiresHandle = false
+HeavyTool.Name = "HEAVY MACRO"
 
     local ReplicatedStorage = game:GetService("ReplicatedStorage")
     local PunchEvent = ReplicatedStorage:FindFirstChild("Events") and
@@ -1332,7 +1332,7 @@ tool.Name = "HEAVY MACRO"
     -- Debounce-Variable
     local debounce = false
 
-tool.Activated:connect(function()
+HeavyTool.Activated:connect(function()
       if debounce then return end
         debounce = true
   
@@ -1346,11 +1346,11 @@ tool.Activated:connect(function()
 end)
 
 
-tool.Parent = game.Players.LocalPlayer.Backpack
+HeavyTool.Parent = game.Players.LocalPlayer.Backpack
 wait(0.2)
 
 game.Players.LocalPlayer.CharacterAdded:Connect(function()
-    tool.Parent = game.Players.LocalPlayer.Backpack
+    HeavyTool.Parent = game.Players.LocalPlayer.Backpack
 end)  
 else
   game.Players.LocalPlayer.Backpack.F:destroy()
@@ -1361,9 +1361,9 @@ end)
 MOBLSection:NewToggle("LIGHT MACRO", "", function(state)
 if state then
   getgenv().keytoclick = "G"
-tool = Instance.new("Tool")
-tool.RequiresHandle = false
-tool.Name = "LIGHT MACRO"
+LightTool = Instance.new("Tool")
+LightTool.RequiresHandle = false
+LightTool.Name = "LIGHT MACRO"
 
     local ReplicatedStorage = game:GetService("ReplicatedStorage")
     local PunchEvent = ReplicatedStorage:FindFirstChild("Events") and
@@ -1372,7 +1372,7 @@ tool.Name = "LIGHT MACRO"
     -- Debounce-Variable
     local debounce = false
 
-tool.Activated:connect(function()
+LightTool.Activated:connect(function()
       if debounce then return end
         debounce = true
   
@@ -1386,11 +1386,11 @@ tool.Activated:connect(function()
 end)
 
 
-tool.Parent = game.Players.LocalPlayer.Backpack
+LightTool.Parent = game.Players.LocalPlayer.Backpack
 wait(0.2)
 
 game.Players.LocalPlayer.CharacterAdded:Connect(function()
-    tool.Parent = game.Players.LocalPlayer.Backpack
+    LightTool.Parent = game.Players.LocalPlayer.Backpack
 end)  
 else
   game.Players.LocalPlayer.Backpack.F:destroy()
