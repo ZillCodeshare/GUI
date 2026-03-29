@@ -1320,12 +1320,12 @@ end)
 
 
 
-MOBLSection:NewToggle("Heavy Macro", "", function(state)
+MOBLSection:NewToggle("HEAVY MACRO", "", function(state)
 if state then
   getgenv().keytoclick = "F"
 tool = Instance.new("Tool")
 tool.RequiresHandle = false
-tool.Name = "HEAVY Macro"
+tool.Name = "HEAVY MACRO"
 
     local ReplicatedStorage = game:GetService("ReplicatedStorage")
     local PunchEvent = ReplicatedStorage:FindFirstChild("Events") and
