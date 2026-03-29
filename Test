@@ -1337,7 +1337,7 @@ tool.Activated:connect(function()
 
 			if debounce then return end
 			debounce = true
-
+		RapidTool.Activated:Connect(function()
 			if PunchEvent then
 				PunchEvent:FireServer(0.4, 0.1, 1)
 			end
@@ -1345,6 +1345,7 @@ tool.Activated:connect(function()
 			task.delay(0.73, function()
 				debounce = false
 			end)
+		end)
 end)
 tool.Parent = game.Players.LocalPlayer.Backpack
 wait(0.2)
