@@ -1462,7 +1462,7 @@ MOBLSection:NewToggle("DEATH PUNCH", "", function(state)
         spawn(function()
           Players = game:GetService("Players");
           for i, v in pairs(Players:GetPlayers()) do
-            if (v == player) then
+            if (v == Players) then
 
             else
               spawn(function()
