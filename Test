@@ -1320,32 +1320,34 @@ end)
 
 
 
-MOBLSection:NewToggle("Heavy Macro", "", function(state)
+MOBLSection:NewToggle("HEAVY MACRO", "", function(state)
 if state then
   getgenv().keytoclick = "F"
 tool = Instance.new("Tool")
 tool.RequiresHandle = false
 tool.Name = keytoclick
 
-		local ReplicatedStorage = game:GetService("ReplicatedStorage")
-		local PunchEvent = ReplicatedStorage:FindFirstChild("Events") and
-			ReplicatedStorage.Events:FindFirstChild("Punch")
+    local ReplicatedStorage = game:GetService("ReplicatedStorage")
+    local PunchEvent = ReplicatedStorage:FindFirstChild("Events") and
+      ReplicatedStorage.Events:FindFirstChild("Punch")
 
-		-- Debounce-Variable
-		local debounce = false
+    -- Debounce-Variable
+    local debounce = false
 
-			if debounce then return end
-			debounce = true
-tool.Activated:Connect(function()
-			if PunchEvent then
-				PunchEvent:FireServer(0.4, 0.1, 1)
-			end
-	
-			task.delay(0.73, function()
-				debounce = false
-			end)
-		end)
+      if debounce then return end
+      debounce = true
+
+tool.Activated:connect(function()
+      if PunchEvent then
+        PunchEvent:FireServer(0.4, 0.1, 1)
+      end
+  
+      task.delay(0.73, function()
+        debounce = false
+      end)
 end)
+
+
 tool.Parent = game.Players.LocalPlayer.Backpack
 wait(0.2)
 
