@@ -1318,8 +1318,6 @@ end)
 
 
 
-
-
 MOBLSection:NewToggle("HEAVY MACRO", "", function(state)
 if state then
   getgenv().keytoclick = "F"
@@ -1359,9 +1357,10 @@ else
 end
 end)
 
+
 MOBLSection:NewToggle("LIGHT MACRO", "", function(state)
 if state then
-  getgenv().keytoclick = "F"
+  getgenv().keytoclick = "G"
 tool = Instance.new("Tool")
 tool.RequiresHandle = false
 tool.Name = "LIGHT MACRO"
