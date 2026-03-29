@@ -1454,7 +1454,7 @@ MOBLSection:NewToggle("DEATH PUNCH", "", function(state)
     -- Debounce-Variable
     local debounce = false
 
-    DeathTool.Activatedfunction()
+    DeathTool.Activated:connect(function()
       if debounce then return end
       debounce = true
 
@@ -1466,7 +1466,7 @@ MOBLSection:NewToggle("DEATH PUNCH", "", function(state)
       task.delay(0.73, function()
         debounce = false
       end)
-    endconnect(:)
+    end)
 
 
     DeathTool.Parent = game.Players.LocalPlayer.Backpack
