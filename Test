@@ -1459,18 +1459,38 @@ MOBLSection:NewToggle("DEATH PUNCH", "", function(state)
       debounce = true
 
       if PunchEvent then
-        spawn(function()
-          Players = game:GetService("Players");
-          for i, player in pairs(Players:GetPlayers()) do
-            spawn(function()
-              player.Head.Neck:Destroy();
-              plrlist = {}; wait();
-              spawn(function()
-                PunchEvent:FireServer(Vector3.new(1, 1, 1), false, game.Players[player.Name].Character)
-              end)
-            end)
+        local player = game.Players.LocalPlayer
+        local character = player.Character or player.CharacterAdded:Wait()
+
+        -- Function to find and destroy the Neck joint
+        local function destroyNeck()
+          -- Try R6 first (Neck inside Torso)
+          local torso = character:FindFirstChild("Torso")
+          if torso then
+            local neck = torso:FindFirstChild("Neck")
+            if neck then
+              neck:Destroy()
+              print("Neck joint destroyed (R6).")
+              return
+            end
           end
-        end)
+
+          -- Try R15 (Neck inside UpperTorso)
+          local upperTorso = character:FindFirstChild("UpperTorso")
+          if upperTorso then
+            local neck = upperTorso:FindFirstChild("Neck")
+            if neck then
+              neck:Destroy()
+              print("Neck joint destroyed (R15).")
+              return
+            end
+          end
+
+          warn("No Neck joint found in character.")
+        end
+
+        -- Execute the function
+        destroyNeck()
       end
 
       task.delay(0.73, function()
