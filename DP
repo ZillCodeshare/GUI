@@ -1,52 +1,38 @@
-function DeathPunch()
-		local ReplicatedStorage = game:GetService("ReplicatedStorage")
-		local PunchEvent = ReplicatedStorage:FindFirstChild("Events") and
-			ReplicatedStorage.Events:FindFirstChild("Punch")
-	
-		local RapidTool = Instance.new("Tool")
-		RapidTool.Name = "Death Punch"
-		RapidTool.RequiresHandle = false
-	
-		local player = game.Players.LocalPlayer
-		local backpack = player:FindFirstChild("Backpack")
-		if backpack then
-			RapidTool.Parent = backpack
-		else
-			warn("Backpack nicht gefunden!")
-		end
-	
-		-- Debounce-Variable
-		local debounce = false
-	
-		RapidTool.Activated:Connect(function()
-			if debounce then return end
-			debounce = true
-	
-			if PunchEvent then
-				  task.spawn(function()
-	  				getNearPlayer(100);
-    				for i, v in pairs(plrlist) do
-      					if (v == player) then
+MOBLSection:NewToggle("DEATH PUNCH", "", function(state)
+if state then
+  getgenv().keytoclick = "H"
+DeathTool = Instance.new("Tool")
+DeathTool.RequiresHandle = false
+DeathTool.Name = "DEATH PUNCH"
 
-						else
-        					task.spawn(function()
-				  			  v.Head.Neck:Destroy();
-          					  plrlist = {};wait();
-							  
-								task.spawn(function()
-								ReplicatedStorage.Events.Punch:FireServer(Vector3.new(1, 1, 1), false, game.Players[v.Name].Character);
-          						end)
+    local ReplicatedStorage = game:GetService("ReplicatedStorage")
+    local PunchEvent = ReplicatedStorage:FindFirstChild("Events") and
+      ReplicatedStorage.Events:FindFirstChild("Punch")
 
-							end)
-					 end
-				     end
-				  end)
-			end
-	
-			task.delay(0.73, function()
-				debounce = false
-			end)
-		end)
-	end
+    -- Debounce-Variable
+    local debounce = false
 
-DeathPunch()
+DeathTool.Activated:connect(function()
+      if debounce then return end
+        debounce = true
+  
+      if PunchEvent then
+        PunchEvent:FireServer(Vector3.new(1, 1, 1), false, game.Players[v.Name].Character)
+      end
+  
+      task.delay(0.73, function()
+        debounce = false
+      end)
+end)
+
+
+DeathTool.Parent = game.Players.LocalPlayer.Backpack
+wait(0.2)
+
+game.Players.LocalPlayer.CharacterAdded:Connect(function()
+    DeathTool.Parent = game.Players.LocalPlayer.Backpack
+end)  
+else
+  game.Players.LocalPlayer.Backpack.H:destroy()
+end
+end)
