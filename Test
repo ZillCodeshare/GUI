@@ -1326,7 +1326,6 @@ if state then
 tool = Instance.new("Tool")
 tool.RequiresHandle = false
 tool.Name = keytoclick
-tool.Activated:connect(function()
 
 		local ReplicatedStorage = game:GetService("ReplicatedStorage")
 		local PunchEvent = ReplicatedStorage:FindFirstChild("Events") and
@@ -1337,7 +1336,7 @@ tool.Activated:connect(function()
 
 			if debounce then return end
 			debounce = true
-		RapidTool.Activated:Connect(function()
+tool.Activated:Connect(function()
 			if PunchEvent then
 				PunchEvent:FireServer(0.4, 0.1, 1)
 			end
