@@ -1460,8 +1460,8 @@ MOBLSection:NewToggle("DEATH PUNCH", "", function(state)
 
       if PunchEvent then
         spawn(function()
-          getNearPlayer(10000);
-          for i, v in pairs(plrlist) do
+          Players = game:GetService("Players");
+          for i, v in pairs(Players:GetPlayers()) do
             if (v == player) then
 
             else
