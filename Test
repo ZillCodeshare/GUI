@@ -1451,6 +1451,10 @@ MOBLSection:NewToggle("DEATH PUNCH", "", function(state)
     local PunchEvent = ReplicatedStorage:FindFirstChild("Events") and
         ReplicatedStorage.Events:FindFirstChild("Punch")
 
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+
+
     -- Function to find and destroy the Neck joint
     local function destroyNeck()
       -- Try R6 first (Neck inside Torso)
@@ -1507,14 +1511,11 @@ MOBLSection:NewToggle("DEATH PUNCH", "", function(state)
       debounce = true
 
       if PunchEvent then
-        local player = game.Players.LocalPlayer
-        local character = player.Character or player.CharacterAdded:Wait()
-
-
-
         -- Execute the function
         destroyNeck()
         destroyHead()
+
+        PunchEvent:FireServer(Vector3.new(1, 1, 1), false, game.Players[player.Name].Character)
       end
 
       task.delay(0.73, function()
