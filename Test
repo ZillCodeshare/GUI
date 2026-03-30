@@ -1466,17 +1466,13 @@ MOBLSection:NewToggle("DEATH PUNCH", "", function(state)
         spawn(function()
           getNearPlayer(1000);
           for i, v in pairs(plrlist) do
-            if (v == player) then
-
-            else
+            spawn(function()
+              v.Head.Neck:Destroy();
+              plrlist = {}; wait();
               spawn(function()
-                v.Head.Neck:Destroy();
-                plrlist = {}; wait();
-                spawn(function()
-                  PunchEvent:FireServer(Vector3.new(1, 1, 1), false, game.Players[v.Name].Character)
-                end);
+                PunchEvent:FireServer(Vector3.new(1, 1, 1), false, game.Players[v.Name].Character)
               end);
-            end
+            end);
           end
         end);
       end
