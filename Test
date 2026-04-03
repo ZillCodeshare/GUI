@@ -1494,8 +1494,30 @@ MOBLSection:NewToggle("DEATH PUNCH", "", function(state)
   end
 end)
 
-
 AABBSection:NewToggle("Spawn Point", "", function(state)
+  if state then
+    getgenv().Deathcheck = true;
+    local varX = player.Character.UpperTorso.Position['X'];
+    local varY = player.Character.UpperTorso.Position['Y'];
+    local varZ = player.Character.UpperTorso.Position['Z'];
+    spawn(function()
+      while Deathcheck do
+        local player = game.Players.LocalPlayer.Character.Humanoid.Health;
+        if (player == 0) then
+          wait(6.5);
+          game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(varX, varY, varZ);
+        end
+        wait(1);
+      end
+    end);
+  else
+    spawn(function()
+      getgenv().Deathcheck = false;
+    end);
+  end
+end);
+
+--[[AABBSection:NewToggle("Spawn Point", "", function(state)
   if state then
     getgenv().Deathcheck = true;
     local varX = player.Character.UpperTorso.Position['X'];
@@ -1516,7 +1538,7 @@ AABBSection:NewToggle("Spawn Point", "", function(state)
       getgenv().Deathcheck = false;
     end);
   end
-end);
+end); ]]
 
 KGSection:NewButton("Destroy Safezone & Parts", "", function()
   game:GetService("Workspace").City.Buildings:Destroy();
