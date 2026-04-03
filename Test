@@ -644,11 +644,11 @@ local lp = game.Players.LocalPlayer
 
 
 
-
+--[[
 AHTSection:NewToggle("Start", "", function(state)
   getgenv().teleport = state
 end);
-
+]]
 
 
 --[[ QSection:NewToggle("Rapid Punch", "", function(state)
@@ -1758,8 +1758,7 @@ AABBSection:NewToggle("Anchor RootPart", "", function(state)
   end
 end);
 
-
-CCXSection:NewToggle("Enable", "", function(arg)
+--[[ CCXSection:NewToggle("Enable", "", function(arg)
   ESP.Enabled = arg
 end);
 
@@ -1837,7 +1836,7 @@ end);
 CCXSection:NewColorPicker("Cham Color", "", Color3.fromRGB(255, 255, 255), function(color)
   getgenv().Color = color
 end)
-
+]]
 
 VSection:NewToggle("Crash V2", "", function(state)
   getgenv().CrashTest = state
@@ -2169,7 +2168,7 @@ MSection:NewToggle("LoopTP Player", "", function(state)
               game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame *
                   CFrame.new(0, 0, 3);
             end
-          end
+0          end
         end);
       end);
       spawn(function()
@@ -3132,11 +3131,12 @@ HAHNGASection:NewButton("Release", "", function()
   Corner.Parent = Toggle
 end);
 
+--[[
 CCCXSection:NewColorPicker("Ability Colors", " ", Color3.fromRGB(255, 255, 255), function(AbilityColor)
   game.Players.LocalPlayer.PlayerGui.uiMain.loadout.ability1.tileOutline.ImageColor3 = AbilityColor
   game.Players.LocalPlayer.PlayerGui.uiMain.loadout.ability2.tileOutline.ImageColor3 = AbilityColor
   game.Players.LocalPlayer.PlayerGui.uiMain.loadout.ability3.tileOutline.ImageColor3 = AbilityColor
-
+]]
 
 
   if game.Players.LocalPlayer.PlayerGui.uiMain.loadout.ability4.Visible == true then
