@@ -1494,6 +1494,7 @@ MOBLSection:NewToggle("DEATH PUNCH", "", function(state)
   end
 end)
 
+
 AABBSection:NewToggle("Spawn Point", "", function(state)
   if state then
     getgenv().Deathcheck = true;
@@ -1504,10 +1505,10 @@ AABBSection:NewToggle("Spawn Point", "", function(state)
       while Deathcheck do
         local player = game.Players.LocalPlayer.Character.Humanoid.Health;
         if (player == 0) then
-          wait(6.5);
+          wait();
           game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(varX, varY, varZ);
         end
-        wait(1);
+        wait();
       end
     end);
   else
