@@ -36,25 +36,25 @@ local Window = Library.CreateLib("Kinos GUI - Age Of Heros", "Serpent");
 local farmTab = Window:NewTab("Farm");
 local farmSection = farmTab:NewSection("Farm");
 
-local AHMTab = Window:NewTab("Target Farm (BETA)");
-local AHMSection = AHMTab:NewSection("Player 1");
-local AHTSection = AHMTab:NewSection("Player 2");
+-- local AHMTab = Window:NewTab("Target Farm (BETA)");
+-- local AHMSection = AHMTab:NewSection("Player 1");
+-- local AHTSection = AHMTab:NewSection("Player 2");
 
 local MTab = Window:NewTab("Target");
 local MSection = MTab:NewSection("Target");
 
 local QTab = Window:NewTab("Rapid Punch");
-local QSection = QTab:NewSection("PC");
-local MOBLSection = QTab:NewSection("MOBÄ°LE");
+-- local QSection = QTab:NewSection("PC");
+local MOBLSection = QTab:NewSection("MOBILE");
 
 
 local AABBTab = Window:NewTab("Toggle's");
 local AABBSection = AABBTab:NewSection("Toggle's");
 
-local CCXTab = Window:NewTab("Visual");
-local CCXSection = CCXTab:NewSection("ESP");
-local TXTSection = CCXTab:NewSection("Fake Stats");
-local CCCXSection = CCXTab:NewSection("Ability Colors");
+--local CCXTab = Window:NewTab("Visual");
+--local CCXSection = CCXTab:NewSection("ESP");
+--local TXTSection = CCXTab:NewSection("Fake Stats");
+--local CCCXSection = CCXTab:NewSection("Ability Colors");
 
 
 local VTab = Window:NewTab("Crash");
@@ -612,7 +612,7 @@ end);
 
 
 GetList();
-local slcplr = AHMSection:NewDropdown("Select Player", "", dropdown, function(currentOption)
+--[[ local slcplr = AHMSection:NewDropdown("Select Player", "", dropdown, function(currentOption)
   spawn(function()
     _G.Hoe = currentOption;
   end);
@@ -626,7 +626,7 @@ end);
 
 AHMSection:NewToggle("Start", "", function(state)
   getgenv().startfarm = state
-end);
+end); ]]
 
 game:GetService("RunService").Stepped:connect(function()
   if getgenv().startfarm == true then
@@ -651,7 +651,7 @@ end);
 
 
 
-QSection:NewToggle("Rapid Punch", "", function(state)
+--[[ QSection:NewToggle("Rapid Punch", "", function(state)
   if state then
     getgenv().rapid = true;
     local UserInputService = game:GetService("UserInputService");
@@ -1004,10 +1004,10 @@ getRoot = function(char)
       char:FindFirstChild("UpperTorso");
   return rootPart;
 end;
+]]
 
 
-
-MOBLSection:NewToggle("RAPÄ°D PUNCH", "", function(state)
+MOBLSection:NewToggle("RAPID PUNCH", "", function(state)
   if state then
     getgenv().keytoclick = "A"
     tool = Instance.new("Tool")
