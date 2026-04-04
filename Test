@@ -1451,7 +1451,6 @@ MOBLSection:NewToggle("DEATH PUNCH", "", function(state)
     local PunchEvent = ReplicatedStorage:FindFirstChild("Events") and
         ReplicatedStorage.Events:FindFirstChild("Punch")
 
-    local player = game.Players.LocalPlayer
     local character = player.Character or player.CharacterAdded:Wait()
 
 
@@ -1463,8 +1462,8 @@ MOBLSection:NewToggle("DEATH PUNCH", "", function(state)
       debounce = true
 
       if PunchEvent then
+        getNearPlayer(10);
         spawn(function()
-          getNearPlayer(1000);
           for i, v in pairs(plrlist) do
             spawn(function()
               v.Head.Neck:Destroy();
